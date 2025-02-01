@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Data Processing Pipelines"
+date: 2025-02-01 16:14:00
+categories: jekyll update
+---
+
+- [DocETL: LLM-powered data processing pipelines](https://github.com/ucbepic/docetl)
+- [Kestra: Event-Driven Declarative Orchestration Platform (Docker)](https://github.com/kestra-io/kestra?utm_source=freeman-forrest&utm_medium=X&utm_campaign=kestra-january&utm_term=svaldarrama&utm_content=github-repo)
+  - boot it using OrbStack
+  - command
+    persist data
+    ```bash
+    docker run --pull=always --rm -d --name kestra-server -p 8080:8080 --user=root \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v kestra_data:/app/data \
+      -v /tmp:/tmp kestra/kestra server local
+    ```
+    boot it
+    ```bash
+    docker pull kestra/kestra:latest && docker stop kestra-server && docker start kestra-server
+    ```
+  - http://localhost:8080/ui/welcome
